@@ -12,9 +12,6 @@ class _ItemDialogAddReviewState extends State<ItemDialogAddReview> {
 final nameController = TextEditingController();
   final reviewController = TextEditingController();
 
-  final String title = "Add Review";
-  final String nameHint = 'Type name here';
-  final String reviewHint = 'Type review here';
 
   Future<void> _onPressYes(BuildContext context) async {
     var errorResponse =
@@ -55,7 +52,7 @@ final nameController = TextEditingController();
 
   Widget _buildAndroid(BuildContext context) {
     return AlertDialog(
-      title: Text(title),
+      title: const Text('Masukkan Review'),
       content: Wrap(
         runSpacing: 12.0,
         children: [
@@ -68,14 +65,11 @@ final nameController = TextEditingController();
             child: TextField(
               controller: nameController,
               textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                hintText: nameHint,
-                hintStyle: const TextStyle(color: grey),
+              decoration:const InputDecoration(
+               
+               
+                hintText: 'Masukkan kategori',
+          
               ),
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
@@ -92,14 +86,10 @@ final nameController = TextEditingController();
               controller: reviewController,
               textAlignVertical: TextAlignVertical.top,
               maxLines: 4,
-              decoration: InputDecoration(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                hintText: reviewHint,
-                hintStyle: const TextStyle(color: grey),
+              decoration: const InputDecoration(
+             
+                hintText: 'Masukkan Review',
+            
               ),
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
@@ -131,13 +121,13 @@ final nameController = TextEditingController();
 
   Widget _buildIos(BuildContext context) {
     return CupertinoAlertDialog(
-      title: Text(title),
+      title: const Text('Masukkan Review'),
       content: Column(
         children: [
           const SizedBox(height: 16),
           CupertinoTextField(
             controller: nameController,
-            placeholder: nameHint,
+            placeholder: 'masukkan kategori',
             textAlignVertical: TextAlignVertical.center,
             maxLines: 1,
             placeholderStyle: const TextStyle(color: grey),
@@ -145,7 +135,7 @@ final nameController = TextEditingController();
           const SizedBox(height: 12),
           CupertinoTextField(
             controller: reviewController,
-            placeholder: reviewHint,
+            placeholder: 'masukkan review',
             textAlignVertical: TextAlignVertical.top,
             maxLines: 4,
             placeholderStyle: const TextStyle(color: grey),

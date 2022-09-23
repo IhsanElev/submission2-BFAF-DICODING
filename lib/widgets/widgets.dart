@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
+import '../common/layout.dart';
 import '../common/style.dart';
 import '../data/api/api_service.dart';
 import '../data/models/models.dart';
